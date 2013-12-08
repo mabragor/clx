@@ -78,7 +78,8 @@
 	       (:file "dpms")
                (:file "xtest")
                (:file "screensaver")
-               (:file "xinerama")))
+               (:file "xinerama")
+	       (:file "xinput")))
      (:module demo
 	      :default-component-class example-source-file
 	      :components
