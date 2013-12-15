@@ -254,7 +254,18 @@
 	       (buttons (nmake-huge-number (sequence-get :length buttons-len :result-type 'list))))
 	  `(,.res :buttons-len ,buttons-len :buttons ,buttons))))))
 
-		   
-		   
+
+(defun warp-pointer (display src-win dst-win src-x src-y src-width src-height dst-x dst-y device-id)
+  (with-buffer-request-and-reply (display (extension-opcode display "XInputExtension") nil)
+    ((data +warp-pointer+)
+     (window src-win)
+     (window dst-win)
+     (fp16-16 src-x)
+     (fp16-16 src-y)
+     (int16 src-width)
+     (int16 src-height)
+     (fp16-16 dst-x)
+     (fp16-16 dst-y)
+     (device-id device-id))))
 
 
