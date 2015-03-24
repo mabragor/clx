@@ -36,7 +36,7 @@
 
 (defsystem CLX
     :description "An implementation of the X Window System protocol in Lisp."
-    :depends-on (#+sbcl sb-bsd-sockets)
+    :depends-on (#+sbcl sb-bsd-sockets iterate)
     :version "0.7.2"
     :serial t
     :default-component-class clx-source-file
